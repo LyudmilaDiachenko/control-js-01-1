@@ -14,3 +14,16 @@
 // елементі масиву "студентів". Перевірте, що в контексті функції "addRating"
 // значення "this" вказує на конкретний об'єкт "студент". Виведіть новий масив зі
 // зміненими рейтингами в консоль.
+
+const studends = [
+    { name: "Vasia", age: 18, counter: 4.8 },
+    { name: "Kolia", age: 17, counter: 4.1 },
+    { name: "Pavlo", age: 18, counter: 3.9 },
+    { name: "Vika", age: 19, counter: 4.4 },
+    { name: "Katia", age: 18, counter: 4.6 },
+]        
+    
+    hello(){
+        return `Hello ${studends.name}`},
+
+console.log(hello(studends))

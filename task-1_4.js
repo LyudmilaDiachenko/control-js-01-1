@@ -16,10 +16,9 @@
 // об'єкті "user". Перевірте, що в контексті методу "balanceInfo" значення "this"
 // вказує на конкретний об'єкт "user".
 
-// ```js
-// const users = [
-//     { name: 'Alice', balance: 500 },
-//     { name: 'Bob', balance: 200 },
-//     { name: 'Charlie', balance: 1000 },
-// ];
-// ```
+
+const users = [
+    { name: 'Alice', balance: 500 },
+    { name: 'Bob', balance: 200 },
+    { name: 'Charlie', balance: 1000 },
+];

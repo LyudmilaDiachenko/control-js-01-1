@@ -16,3 +16,25 @@
 
 // Використовуйте обєднання обʼєктів, метод forEach та ключове слово this для
 // доступу до властивостей об'єкту.
+
+const car = {
+    brand: "Hundai",
+    model: "Avante",
+    year: 2017,
+    speed: 100,
+    showInfo(){
+        return `Марка: ${this.mark}; Модель: ${this.model}; Рік випуску: ${this.year};`
+    }
+}
+const state = {
+    city: "Vinnytsia",
+    distance: 120
+}
+
+const myCar = Object.assign(car, state);
+console.log(myCar)
+
+function showTime(car){
+    console.log(`Автомобіль ${car.brand}, марки ${car.model} дістанеться міста ${car.city} за ${car.distance / car.speed}`)
+}
+console.log(showTime(myCar))
