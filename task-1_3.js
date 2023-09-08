@@ -15,15 +15,33 @@
 // значення "this" вказує на конкретний об'єкт "студент". Виведіть новий масив зі
 // зміненими рейтингами в консоль.
 
-const studends = [
-    { name: "Vasia", age: 18, counter: 4.8 },
-    { name: "Kolia", age: 17, counter: 4.1 },
-    { name: "Pavlo", age: 18, counter: 3.9 },
-    { name: "Vika", age: 19, counter: 4.4 },
-    { name: "Katia", age: 18, counter: 4.6 },
-]        
-    
+class Student {
+    constructor(name, age, rate){
+        this.name = name
+        this.age = age
+        this.rate = rate
+    }
     hello(){
-        return `Hello ${studends.name}`},
+        return `Привіт, ${this.name}!`
+    }
+}
 
-console.log(hello(studends))
+const students = [
+    new Student("Микита", 17, 1.0),
+    new Student("Микола", 16, 2.0),
+    new Student("Маруся", 18, 3.0),
+]
+
+let hellos = students.map(e => e.hello())
+console.log(hellos)
+
+const minRate = 2
+let ratedStudents = students.filter(e => e.rate >= minRate)
+console.log(ratedStudents)
+
+function addRating(cnt){
+    this.rate += cnt
+}
+
+students.forEach(e => addRating.call(e, 1.0))
+console.log(students)
