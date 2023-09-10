@@ -13,24 +13,42 @@
 // викличте функцію "friendsInfo" для обох об'єктів, передаючи контекст через
 // методи "call()" чи "apply()". Виведіть результат у консоль.
 
-// ```js
-// const user1 = {
-//     firstName: 'John',
-//     lastName: 'Doe',
-//     friends: [
-//         { firstName: 'Jane', lastName: 'Doe' },
-//         { firstName: 'Bob', lastName: 'Smith' },
-//         { firstName: 'Alice', lastName: 'Wonderland' },
-//     ],
-// };
 
-// const user2 = {
-//     name: 'Juan',
-//     surname: 'Hernandez',
-//     friends: [
-//         { name: 'Maria', surname: 'Garcia' },
-//         { name: 'Carlos', surname: 'Rodriguez' },
-//         { name: 'Ana', surname: 'Lopez' },
-//     ],
-// };
-// ```
+const user1 = {
+    firstName: 'John',
+    lastName: 'Doe',
+    friends: [
+        { firstName: 'Jane', lastName: 'Doe' },
+        { firstName: 'Bob', lastName: 'Smith' },
+        { firstName: 'Alice', lastName: 'Wonderland' },
+    ],    
+};
+
+const user2 = {
+    name: 'Juan',
+    surname: 'Hernandez',
+    friends: [
+        { name: 'Maria', surname: 'Garcia' },
+        { name: 'Carlos', surname: 'Rodriguez' },
+        { name: 'Ana', surname: 'Lopez' },
+    ],
+};
+
+function friendsInfo(){
+    this.friends.forEach(e => console.log(e.name || e.firstName, e.surname || e.lastName))
+}
+friendsInfo.call(user1)
+friendsInfo.call(user2)
+
+const user3 = {
+    name: 'Vasia',
+    surname: 'Pypkin',
+    friends: [
+        { name: 'Maria', surname: 'Garcia' },
+        { firstName: 'Bob', lastName: 'Smith' },
+        { name: 'Ana', surname: 'Lopez' },
+        { firstName: 'Alice', lastName: 'Wonderland' },
+        { name: 'Carlos', surname: 'Rodriguez' },
+    ],
+};
+friendsInfo.call(user3)

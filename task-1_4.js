@@ -16,9 +16,27 @@
 // об'єкті "user". Перевірте, що в контексті методу "balanceInfo" значення "this"
 // вказує на конкретний об'єкт "user".
 
+const user = {
+    name: 'Lyudmila',
+    balance: 20000,
+    addMoney(money){
+       this.balance += money
+    },
+    balanceInfo(){
+        console.log(this.balance)
+    }
+}
+
+user.addMoney(1000)
+user.balanceInfo()
 
 const users = [
     { name: 'Alice', balance: 500 },
     { name: 'Bob', balance: 200 },
     { name: 'Charlie', balance: 1000 },
 ];
+
+users.forEach(e => user.addMoney.call(e, 50))
+console.log(users.filter(e => e.balance >= 400).map(e => e.balance))
+
+user.balanceInfo.call(users[0])
